@@ -1,6 +1,10 @@
-var app = new Vue({
+new Vue({
   el: '#app',
   data: {
-    greeting: 'Hello, Karen!'
+    teams: [],
+    players: []
+  },
+  methods: {
+    // ...
   }
 });

@@ -1,17 +1,19 @@
-# karen-le-coding-challenge
+# Karen Le Coding Challenge
 
 ## User story 1
 
-1. When a user clicks the "Load NBA teams data" button, create a method that uses the JavaScript Fetch API to perform a `GET` request from `https://www.balldontlie.io/api/v1/teams`. Assign the response data to the `teams` data property.
-2. Render a list of each NBA team.
-3. When user clicks "Favorite" next to a team name, toggle the value of property `isFavorite` (type `boolean`).
-4. When a user clicks the team name, it should open a new tab and load the appropriate URL of the team name on NBA.com (i.e. https://www.nba.com/bulls/).
+1. When a user clicks the "Load NBA teams" button, create a method that uses the JavaScript Fetch API to perform a `GET` request from `https://www.balldontlie.io/api/v1/teams`. Assign the response data to the `teams` data property.
+2. When the data has loaded, change the button text to "View NBA teams".
+3. Render a list of each NBA team.
+4. When user clicks "Favorite" next to a team name, toggle the value of property `isFavorite` (type `boolean`).
+5. When a user clicks the team name, it should open a new tab and load the appropriate URL of the team name on NBA.com (i.e. https://www.nba.com/bulls/).
 
 ## User story 2
 
 1. When a user clicks the "Load NBA players" button, create a method that uses the JavaScript Fetch API to perform a `GET` request from `https://www.balldontlie.io/api/v1/players`. Assign the response data to the `players` data property.
-2. Render a list of each NBA team.
-3. When user clicks "Favorite" next to a player name, toggle the value of property `isFavorite` (type `boolean`).
+2. When the data has loaded, change the button text to "View NBA players".
+3. Render a list of each NBA team.
+4. When user clicks "Favorite" next to a player name, toggle the value of property `isFavorite` (type `boolean`).
 
 ## Rules
 
@@ -25,6 +27,7 @@
 * Tailwind CSS has already been added to `index.html` via CDN.
 * `index.html` and `app.js` are set up as starter templates for your work.
 * Simply load `index.html` in your browser to see your work.
+* [URL for the "heart" icon](https://cdn.jsdelivr.net/npm/heroicons@1.0.1/solid/heart.svg)
 
 ## Documentation
 
