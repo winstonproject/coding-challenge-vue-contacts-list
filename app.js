@@ -1,10 +1,12 @@
 new Vue({
   el: '#app',
   data: {
-    teams: [],
-    players: []
+    contacts: []
   },
   methods: {
-    // ...
+    
+  },
+  mounted() {
+    
   }
 });

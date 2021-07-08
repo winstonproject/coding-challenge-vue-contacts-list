@@ -1,35 +1,89 @@
-# Karen Le Coding Challenge
+# Coding Challenge
 
-## User story 1
+## Functional Specification
 
-1. When a user clicks the "Load NBA teams" button, create a method that uses the JavaScript Fetch API to perform a `GET` request from `https://www.balldontlie.io/api/v1/teams`. Assign the response data to the `teams` data property.
-2. When the data has loaded, change the button text to "View NBA teams".
-3. Render a list of each NBA team.
-4. When user clicks "Favorite" next to a team name, toggle the value of property `isFavorite` (type `boolean`).
-5. When a user clicks the team name, it should open a new tab and load the appropriate URL of the team name on NBA.com (i.e. https://www.nba.com/bulls/).
+1. When the application loads, use the JavaScript [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) API to perform a `GET` request from the URL `https://randomuser.me/api/?results=50`.
+2. Render a list from the results using the "contacts item template" provided in `index.html`.
+3. Scan the template for static data that can be replaced with variables containing data from the API response.
+4. The "star" icon button:
+  * When user clicks, toggle `isFavorite` data property with `boolean` value. Please note that `isFavorite` is not defined in the "contact item" by default.
+  * When `isFavorite` is `false`, the button class list should include: `text-gray-400 hover:bg-yellow-100 hover:text-yellow-500`, but not when `isFavorite` is `true`.
+  * When `isFavorite` is `true`, the button class list should include: `bg-yellow-400 text-white`, but not when `isFavorite` is `false`.
+5. When user clicks the "trash can" icon button, use the JavaScript [`confirm`](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm) function to prompt user to "confirm" or "cancel" removing the contact from the contact list. If the user confirms, remove the item from the contacts list.
 
-## User story 2
+## Example response data:
 
-1. When a user clicks the "Load NBA players" button, create a method that uses the JavaScript Fetch API to perform a `GET` request from `https://www.balldontlie.io/api/v1/players`. Assign the response data to the `players` data property.
-2. When the data has loaded, change the button text to "View NBA players".
-3. Render a list of each NBA team.
-4. When user clicks "Favorite" next to a player name, toggle the value of property `isFavorite` (type `boolean`).
-
-## Rules
-
-1. Write a single reusible method that handles the API requests and returns the response.
-2. If `teams` or `players` has already been loaded, do not request that data again.
-3. Use [Tailwind CSS](https://tailwindcss.com/) for all styles, following the design mockup below as closely as possible (less important, don't worry about perfection for this project)
+```JSON
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "Madame",
+        "first": "Roswitha",
+        "last": "Olivier"
+      },
+      "location": {
+        "street": {
+          "number": 426,
+          "name": "Rue de Gerland"
+        },
+        "city": "Saas-Fee",
+        "state": "Luzern",
+        "country": "Switzerland",
+        "postcode": 6253,
+        "coordinates": {
+          "latitude": "-49.0810",
+          "longitude": "49.0141"
+        },
+        "timezone": {
+          "offset": "-6:00",
+          "description": "Central Time (US & Canada), Mexico City"
+        }
+      },
+      "email": "roswitha.olivier@example.com",
+      "login": {
+        "uuid": "dc2307b6-026d-48ed-a5a9-4710ec9bb1f5",
+        "username": "organicfish523",
+        "password": "pentium",
+        "salt": "ky2G51yw",
+        "md5": "356bd62a2f8a7165331abe10f0a870da",
+        "sha1": "86c9f230453bc619f8701790ed6828af4ea3d813",
+        "sha256": "1b6b83fcb4dd2451c6e1772f8f6daf240f39c69d7e4ce99931d7b78ee046a7e4"
+      },
+      "dob": {
+        "date": "1950-10-10T10:28:43.245Z",
+        "age": 71
+      },
+      "registered": {
+        "date": "2002-07-31T21:42:37.542Z",
+        "age": 19
+      },
+      "phone": "078 709 39 03",
+      "cell": "076 352 94 71",
+      "id": {
+        "name": "AVS",
+        "value": "756.4133.6301.44"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/89.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/89.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/89.jpg"
+      },
+      "nat": "CH"
+    }
+  ],
+  "info": {
+    "seed": "392face8e35ada17",
+    "results": 1,
+    "page": 1,
+    "version": "1.3"
+  }
+}
+```
 
 ## Notes
 
-* Vue has already been added to `index.html` via CDN.
-* Tailwind CSS has already been added to `index.html` via CDN.
 * `index.html` and `app.js` are set up as starter templates for your work.
 * Simply load `index.html` in your browser to see your work.
-* [URL for the "heart" icon](https://cdn.jsdelivr.net/npm/heroicons@1.0.1/solid/heart.svg)
-
-## Documentation
-
-* [Fetch documentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 * [Vue documentation](https://vuejs.org/v2/guide/)
