@@ -1,8 +1,10 @@
 # Coding Challenge
 
-Fork this repository. When you'd like to submit your code for review, create a pull request to merge into `base repository: winstonproject/coding-challenge-vue-contacts-list | base: main`.
+## Instructions
 
-![image](https://user-images.githubusercontent.com/498069/124864294-ac0bd380-df86-11eb-82fc-015d3c1f6b50.png)
+1. Fork this repository
+2. When you'd like to submit your code for review, create a pull request to merge into `base repository: winstonproject/coding-challenge-vue-contacts-list | base: main`.
+ ![image](https://user-images.githubusercontent.com/498069/124864294-ac0bd380-df86-11eb-82fc-015d3c1f6b50.png)
 
 ## Functional Specification
 
