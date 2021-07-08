@@ -1,5 +1,7 @@
 # Coding Challenge
 
+Our core product is primarily built with Vue, Tailwind CSS, and use of APIs. The goal of this challenge helps us understand how quickly you can pick up unfamilar technologies through documentation, learn how you make decisions, and how you implement some fundementals of Vue (such as creating methods, rendering lists, working with reactivity, etc.).
+
 ## Instructions
 
 1. Fork this repository
