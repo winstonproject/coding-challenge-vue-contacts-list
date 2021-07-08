@@ -1,5 +1,7 @@
 # Coding Challenge
 
+Fork this repository. When you'd like to submit your code for review, create a pull request to merge into base `winstonproject/coding-challenge-vue-contacts-list`.
+
 ## Functional Specification
 
 1. When the application loads, use the JavaScript [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) API to perform a `GET` request from the URL `https://randomuser.me/api/?results=50`.
