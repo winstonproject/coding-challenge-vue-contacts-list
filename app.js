@@ -33,7 +33,7 @@ new Vue({
 
       favoriteElement.addEventListener("click", () => {
         contact.isFavorite = !contact.isFavorite;
-        
+
         // if favorite is true: bg-yellow-400 text-white
         favoriteElement.classList.toggle("bg-yellow-400");
         favoriteElement.classList.toggle("text-white");
@@ -50,7 +50,6 @@ new Vue({
           this.contacts = this.contacts.filter(
             (currentContact) => currentContact.email !== contact.email
           );
-          console.log(this.contacts.length)
           this.getParentDiv().removeChild(contactDiv);
         }
       });
@@ -69,10 +68,10 @@ new Vue({
       });
     }
   },
-  async mounted() {
+  mounted() {
     this.contactTemplate = this.getParentDiv().children[1];
 
-    await fetch("https://randomuser.me/api/?results=50")
+    fetch("https://randomuser.me/api/?results=50")
       .then((response) => {
         return response.json();
       })
