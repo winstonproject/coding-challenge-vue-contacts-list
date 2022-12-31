@@ -16,12 +16,10 @@ new Vue({
       } = contact;
 
       const contactDiv = this.contactTemplate.cloneNode(true);
-      contactDiv.getElementsByTagName("img")[0].src = large;
+      contactDiv.querySelector(":scope > img").src = large;
 
       const contactInfoElement = contactDiv.querySelectorAll(":scope > div")[0];
-      contactInfoElement.getElementsByTagName(
-        "div"
-      )[0].textContent = `${first} ${last}`;
+      contactInfoElement.querySelector("div").textContent = `${first} ${last}`;
 
       const contactEmailElement = contactInfoElement.querySelector("a");
       contactEmailElement.textContent = email;
