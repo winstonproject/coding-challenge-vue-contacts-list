@@ -19,23 +19,27 @@
     </div>
 
     <!-- contacts item template -->
-    <div class="flex justify-between items-center border-b border-gray-100 p-4">
-      <img src="https://randomuser.me/api/portraits/women/26.jpg"
+    <div v-for="contact in contacts" class="flex justify-between items-center border-b border-gray-100 p-4">
+      <img :src="contact.picture.thumbnail"
         class="h-16 w-16 rounded-full mr-4" />
       <div class="flex-1">
         <div class="text-xl font-semibold">
-          Gertrude Day
+          {{contact.name.title}} {{contact.name.first}} {{contact.name.last}}
         </div>
         <a href="mailto:gertrude.day@example.com"
           class="text-blue-600 hover:underline">
-          gertrude.day@example.com
+          {{contact.email}}
         </a>
       </div>
       <div class="flex items-center ml-4">
-        <button class="flex items-center justify-center mr-2 rounded-full h-10 w-10 text-gray-400 hover:bg-yellow-100 hover:text-yellow-500">
+        <button
+          @click="toggleFavorite(contact)"
+          :class="['flex items-center justify-center mr-2 rounded-full h-10 w-10', contact.favorite ? 'bg-yellow-400 text-white' : 'text-gray-400 hover:bg-yellow-100 hover:text-yellow-500']">
           <i class="fas fa-star"></i>
         </button>
-        <button class="flex items-center justify-center rounded-full h-10 w-10 text-gray-400 hover:bg-red-50 hover:text-red-600">
+        <button
+          @click="removeContact(contact)"
+          class="flex items-center justify-center rounded-full h-10 w-10 text-gray-400 hover:bg-red-50 hover:text-red-600">
           <i class="fas fa-trash"></i>
         </button>
       </div>
