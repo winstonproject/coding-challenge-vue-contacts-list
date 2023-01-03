@@ -13,6 +13,13 @@ new Vue({
       contact.isFavorite = !contact.isFavorite;
       console.log("contacts", this.contacts);
     },
+
+    removeContact(contact) {
+      if (confirm("Are you sure you want to delete this contact?")) {
+        const index = this.contacts.indexOf(contact);
+        this.contacts.splice(index, 1);
+      }
+    }
   },
   created() {
     this.getContacts(50)

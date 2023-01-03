@@ -1,51 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/475262a3fa.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/475262a3fa.js" crossorigin="anonymous"></script>
-</head>
+  <body>
+    <div id="app" class="pb-16">
+      <div class="text-2xl font-bold bg-white border-b-2 border-gray-100 p-4">
+        Contacts
+      </div>
 
-<body>
-  <div id="app" class="pb-16">
-
-    <div class="text-2xl font-bold bg-white border-b-2 border-gray-100 p-4">
-      Contacts
-    </div>
-
-    <div v-for="contact in contacts" :key="contact.id.value" class="flex justify-between items-center border-b border-gray-100 p-4">
-      <img :src="contact.picture.thumbnail"
-        class="h-16 w-16 rounded-full mr-4" />
-      <div class="flex-1">
-        <div class="text-xl font-semibold">
-          {{ contact.name.first }} {{ contact.name.last }}
+      <div
+        v-for="contact in contacts"
+        :key="contact.id.value"
+        class="flex justify-between items-center border-b border-gray-100 p-4"
+      >
+        <img
+          :src="contact.picture.thumbnail"
+          class="h-16 w-16 rounded-full mr-4"
+        />
+        <div class="flex-1">
+          <div class="text-xl font-semibold">
+            {{ contact.name.first }} {{ contact.name.last }}
+          </div>
+          <a
+            :href="`mailto:${contact.email}`"
+            class="text-blue-600 hover:underline"
+          >
+            {{ contact.email }}
+          </a>
         </div>
-        <a :href="`mailto:${contact.email}`"
-          class="text-blue-600 hover:underline">
-          {{ contact.email }}
-        </a>
-      </div>
-      <div class="flex items-center ml-4">
-        <button v-on:click="toggleFavorite(contact)" 
-        :class="[contact.isFavorite ? 'bg-yellow-400 text-white' : 'text-gray-400 hover:bg-yellow-100 hover:text-yellow-500']"
-        class="flex items-center justify-center mr-2 rounded-full h-10 w-10">
-          <i class="fas fa-star"></i>
-        </button>
-        <button class="flex items-center justify-center rounded-full h-10 w-10 text-gray-400 hover:bg-red-50 hover:text-red-600">
-          <i class="fas fa-trash"></i>
-        </button>
+        <div class="flex items-center ml-4">
+          <button
+            v-on:click="toggleFavorite(contact)"
+            :class="[contact.isFavorite ? 'bg-yellow-400 text-white' : 'text-gray-400 hover:bg-yellow-100 hover:text-yellow-500']"
+            class="flex items-center justify-center mr-2 rounded-full h-10 w-10"
+          >
+            <i class="fas fa-star"></i>
+          </button>
+          <button
+            v-on:click="removeContact(contact)"
+            class="flex items-center justify-center rounded-full h-10 w-10 text-gray-400 hover:bg-red-50 hover:text-red-600"
+          >
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
       </div>
     </div>
 
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-  <script src="app.js"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
