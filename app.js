@@ -11,7 +11,7 @@ new Vue({
 
     toggleFavorite(contact) {
       contact.isFavorite = !contact.isFavorite;
-      console.log("contacts", this.contacts);
+      this.sortContacts();
     },
 
     removeContact(contact) {
@@ -19,7 +19,13 @@ new Vue({
         const index = this.contacts.indexOf(contact);
         this.contacts.splice(index, 1);
       }
-    }
+    },
+
+    sortContacts() {
+      this.contacts = this.contacts
+        .map((c) => c)
+        .sort((a, b) => (a.isFavorite === b.isFavorite) ? 0 : a.isFavorite ? -1 : 1);
+    },
   },
   created() {
     this.getContacts(50)
@@ -31,7 +37,6 @@ new Vue({
             isFavorite: false
           }
         });
-        console.log("contacts", this.contacts);
       })
       .catch((error) => {
         alert("Error while fetching contacts");
