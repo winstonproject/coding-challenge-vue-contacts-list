@@ -18,17 +18,16 @@
       Contacts
     </div>
 
-    <!-- contacts item template -->
-    <div class="flex justify-between items-center border-b border-gray-100 p-4">
-      <img src="https://randomuser.me/api/portraits/women/26.jpg"
+    <div v-for="contact in contacts" :key="contact.id.value" class="flex justify-between items-center border-b border-gray-100 p-4">
+      <img :src="contact.picture.thumbnail"
         class="h-16 w-16 rounded-full mr-4" />
       <div class="flex-1">
         <div class="text-xl font-semibold">
-          Gertrude Day
+          {{ contact.name.first }} {{ contact.name.last }}
         </div>
-        <a href="mailto:gertrude.day@example.com"
+        <a :href="`mailto:${contact.email}`"
           class="text-blue-600 hover:underline">
-          gertrude.day@example.com
+          {{ contact.email }}
         </a>
       </div>
       <div class="flex items-center ml-4">
