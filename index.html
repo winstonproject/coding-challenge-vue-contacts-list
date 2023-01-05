@@ -54,7 +54,9 @@
         </a>
       </div>
       <div class="flex items-center ml-4">
-        <button class="flex items-center justify-center mr-2 rounded-full h-10 w-10 text-gray-400 hover:bg-yellow-100 hover:text-yellow-500">
+        <button class="flex items-center justify-center mr-2 rounded-full h-10 w-10"
+          :class="{'text-yellow-500 hover:bg-yellow-100 hover:text-yellow-500': contact.isFavorite, 'bg-yellow-400 text-white': !contact.isFavorite}"
+          @click="toggleFavorite(contact)">
           <i class="fas fa-star"></i>
         </button>
         <button class="flex items-center justify-center rounded-full h-10 w-10 text-gray-400 hover:bg-red-50 hover:text-red-600">

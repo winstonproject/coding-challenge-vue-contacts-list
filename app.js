@@ -4,7 +4,9 @@ new Vue({
     contacts: []
   },
   methods: {
-    
+    toggleFavorite(contact) {
+      this.$set(contact, 'isFavorite', !contact.isFavorite);
+    }
   },
   mounted() {
     fetch('https://randomuser.me/api/?results=10')
