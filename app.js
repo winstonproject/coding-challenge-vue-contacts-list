@@ -6,6 +6,12 @@ new Vue({
   methods: {
     toggleFavorite(contact) {
       this.$set(contact, 'isFavorite', !contact.isFavorite);
+    },
+
+    deleteContact(contact,index) {
+      if (confirm(`Are you sure you want to delete ${contact.name.first} ${contact.name.last} from your contacts?`)) {
+        this.contacts.splice(index, 1);
+      }
     }
   },
   mounted() {
